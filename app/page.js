@@ -105,11 +105,19 @@ import { Star } from 'lucide-react';
 // }
 
 
+// export default function Home() {
+//   return (
+//     <div>
+//       <h1>Setup Complete!</h1>
+//       <Star className="w-6 h-6 text-yellow-500" />
+//     </div>
+//   );
+// }
 export default function Home() {
   return (
-    <div>
-      <h1>Setup Complete!</h1>
-      <Star className="w-6 h-6 text-yellow-500" />
+    <div className="p-4 bg-primary-50 text-primary-500 shadow-figma">
+      <h1 className="text-2xl font-bold">Tailwind Working!</h1>
+      <p>Custom styles applied.</p>
     </div>
   );
 }

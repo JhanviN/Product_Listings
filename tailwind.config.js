@@ -1,5 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,29 +16,25 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Custom colors from Figma (inspect Figma for exact hex; e.g., blue banners ~#00BFFF, accents)
       colors: {
         primary: {
-          50: '#eff6ff', // Light blue bg for main
-          500: '#00BFFF', // Main blue
+          50: '#eff6ff', // Light blue background from Figma
+          500: '#00BFFF', // Main blue (e.g., banners)
           600: '#0099CC',
         },
         accent: {
           500: '#FF69B4', // Pink for badges?
         },
-        // Add more: e.g., for HOT badge yellow #FFD700
-        hot: '#FFD700',
-        // Grays, etc., as needed
+        hot: '#FFD700', // HOT badge yellow
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'], // Figma likely uses Inter; fallback to system
+        sans: ['Inter', 'system-ui', 'sans-serif'], // Likely Figma font
       },
-      // Custom spacings/radii if Figma has non-standard (e.g., border-radius 5px for cards)
       borderRadius: {
-        'figma-card': '8px', // Measure from Figma inspect
+        'figma-card': '8px', // Match Figma card corners (inspect for exact)
       },
       spacing: {
-        'figma-gap': '16px', // Common grid gaps
+        'figma-gap': '16px', // Common grid gap from Figma
       },
     },
   },

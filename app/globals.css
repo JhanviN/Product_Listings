@@ -2,18 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom resets for pixel-perfect */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: theme('fontFamily.sans', sans-serif);
-  background-color: theme('colors.primary.50'); /* Light bg from Figma */
+  font-family: Inter, system-ui, sans-serif;
+  background-color: #eff6ff;
 }
 
-/* Utility for Figma shadows (inspect for exact) */
 .shadow-figma {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Common Tailwind md shadow */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
