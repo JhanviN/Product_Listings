@@ -49,7 +49,7 @@ export default function Sidebar({ filters, setFilters }) {
           </h2>
 
           {/* Deals List */}
-          <div className="mt-6 w-full">
+          <div className="mt-16 w-full">
             {deals.map((deal, index) => (
               <div
                 key={index}
@@ -84,7 +84,7 @@ export default function Sidebar({ filters, setFilters }) {
 
         {/* Prices Box */}
         <div
-          className="rounded-md p-4 mt-6"
+          className="rounded-md p-4 mt-12"
           style={{ width: "100%", backgroundColor: "#F6F7F8" }}
         >
           <h2
@@ -144,7 +144,7 @@ export default function Sidebar({ filters, setFilters }) {
 
         {/* Color Picker Box */}
         <div
-          className="rounded-md p-2 mt-6"
+          className="rounded-md p-2 mt-40"
           style={{
             width: "100%",
             height: "144.22px",
