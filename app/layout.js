@@ -4,7 +4,7 @@ import './globals.css';
 const inter = Inter({ 
   subsets: ['latin'], 
   variable: '--font-inter',
-  weight: ['400', '500', '600', '700'] // Match Figma weights
+  weight: ['400', '500', '600', '700'] 
 });
 
 export const metadata = {
@@ -15,7 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans`}>{children}</body>
+      <body className={`${inter.variable} font-sans bg-white min-h-screen`}>
+        {children}
+      </body>
     </html>
   );
 }
