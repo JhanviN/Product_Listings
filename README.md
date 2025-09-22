@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Intern Test – Product Listing Page
+
+This is the solution for the **SoftDef Frontend Intern Test**.  
+The goal was to create a **pixel-perfect Product Listing Page** based on the Figma design:  
+[Figma Design Link](https://www.figma.com/design/kNs2WbNk5h7qfsQMFOwbXt/Frontend_Role?node-id=0-1&p=t)  
+
+The app is built with **Next.js** and **Tailwind CSS**, using reusable components, client-side mock data, and fully working filters, sorting, pagination, and responsive layouts.
+
+---
+
+## Features Implemented
+
+- Reusable components:
+  - `Navbar`, `Sidebar`, `FilterPanel`, `ProductCard`, `Badge`, `Rating`, `Pagination`, `Footer`
+- Sidebar filters with expand/collapse functionality
+- Product listing grid with:
+  - Product image, HOT badge, title, prices, discount, rating, and quick actions
+- Color selection filter that visually updates product cards
+- Sorting options (Name, Price, Popularity) and pagination
+- Fully responsive layout (desktop, tablet, mobile)
+- Accessibility: keyboard navigation, focus styles, alt text, ARIA attributes
+- Client-side mock data (24+ products)
+
+> **Note:** The cart image may not display in deployed environments due to static asset path handling, but the app is fully functional.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js >= 18.x
+- npm / yarn / pnpm
+
+### Installation
+
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd <project-folder>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+###Install Dependencies
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+###Deployement
+The app is deployed on Vercel:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Live URL: https://product-listings-kohl.vercel.app/
 
-## Learn More
+###Technical Stack
 
-To learn more about Next.js, take a look at the following resources:
+Framework: Next.js (React)  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Language: JavaScript  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Styling: Tailwind CSS  
 
-## Deploy on Vercel
+Icons: Lucide / Heroicons  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+State: React hooks / component state  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Data: Client-side mock dataset  
+
+git clone <your-repo-url>
+cd <project-folder>
