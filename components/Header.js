@@ -46,8 +46,8 @@ export default function Header({ links = [], cartItems = 0, cartPrice = 0 }) {
         style={{
           width: "1499.39px",
           height: "4.53px",
-          backgroundColor: "#E5E7EB", // Tailwind gray-300
-          marginTop: "2.75px", // adjust to position below header (optional)
+          backgroundColor: "#E5E7EB", 
+          marginTop: "2.75px", 
           opacity: 1,
         }}
       />

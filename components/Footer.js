@@ -252,6 +252,7 @@ export default function Footer() {
             weight: "400",
             fontSize: "14px",
             letterSpacing: "0%",
+            bottom: "80px"
 
 
           }}
