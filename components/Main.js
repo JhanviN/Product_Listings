@@ -124,7 +124,6 @@ export default function Main({ filters, setFilters }) {
   </div>
 </div>
 
-{/* Product Grid: 2 rows x 3 columns */}
 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
 
   {[
@@ -157,7 +156,7 @@ export default function Main({ filters, setFilters }) {
         {product.name}
       </h2>
 
-      {/* Star Rating: 4 out of 5 */}
+     
       <div className="flex justify-center mt-2 gap-1">
         {[...Array(5)].map((_, i) => (
           <AiFillStar key={i} className={`w-4 h-4 ${i < 4 ? 'text-yellow-400' : 'text-gray-300'}`} />

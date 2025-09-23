@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans bg-white`}> 
-        {/* bg-white sets the background color for the entire page */}
+        
         {children}
       </body>
     </html>

@@ -7,7 +7,7 @@ export default function Logo() {
       style={{
         width: "182px",
         height: "44px",
-        backgroundColor: "#FFFFFF", // white background
+        backgroundColor: "#FFFFFF",
       }}
     >
       {/* Icon box */}
@@ -16,18 +16,18 @@ export default function Logo() {
         style={{
           width: "51px",
           height: "44px",
-          backgroundColor: "#FFFFFF", // also white
+          backgroundColor: "#FFFFFF", 
         }}
       >
         <Image
-          src="/logos/logo.svg"   // make sure logo.svg is in /public/logos/
+          src="/logos/logo.svg"  
           alt="E-Comm Logo"
           width={30}
           height={30}
         />
       </div>
 
-      {/* E-Comm text */}
+     
       <span
         style={{
           marginLeft: "10px",
@@ -35,7 +35,7 @@ export default function Logo() {
           fontWeight: 700,
           fontSize: "24px",
           lineHeight: "100%",
-          color: "#000000", // black text
+          color: "#000000", 
         }}
       >
         E-Comm

@@ -10,9 +10,9 @@ export default function Footer() {
     <footer className="bg-[#BCDDFE] w-full">
       <div className="max-w-[1200px] mx-auto px-8 py-12 flex flex-col gap-12">
         
-        {/* Row 1 - 3 columns */}
+      
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Column 1 - Logo + description */}
+        
           <div>
             <h2
               className="text-2xl font-bold text-[#22262A] mb-4"
@@ -40,7 +40,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Column 2 - Follow Us */}
+
           <div>
             <h2
               className="font-semibold text-[#22262A] mb-4"
@@ -91,7 +91,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 3 - Contact Us */}
           <div>
             <h2
               className="font-semibold text-[#22262A] mb-4"
@@ -120,7 +119,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Row 2 - 4 columns */}
+ 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h3
@@ -232,7 +231,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* White separator line */}
         <div
           className="bg-white mx-auto"
           style={{
@@ -242,7 +240,6 @@ export default function Footer() {
         ></div>
       </div>
 
-      {/* Bottom bar */}
       <div className="w-full border-t border-gray-300 bg-[#BCDDFE] py-4">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-8">
           <p className="text-sm text-[#22262A]"
