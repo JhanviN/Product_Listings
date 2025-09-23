@@ -22,19 +22,14 @@ export default function Main({ filters, setFilters }) {
         <Sidebar filters={filters} setFilters={setFilters} />
       </div>
       {/* Mobile Sidebar Overlay */}
-      {sidebarOpen && (
-        <div className="fixed inset-0 z-50 flex">
-          {/* Dark overlay */}
-          <div
-            className="fixed inset-0 bg-black/50"
-            onClick={() => setSidebarOpen(false)}
-          />
-          {/* Slide-in sidebar */}
-          <div className="relative w-64 bg-white h-full z-50 shadow-lg animate-slide-in">
-            <Sidebar filters={filters} setFilters={setFilters} />
-          </div>
-        </div>
-      )}
+{sidebarOpen && (
+  <div className="fixed inset-0 z-50 flex">
+    <div className="fixed inset-0 bg-black/50" onClick={() => setSidebarOpen(false)} />
+    <div className="relative w-64 bg-white h-full z-50 shadow-lg animate-slide-in">
+      <Sidebar filters={filters} setFilters={setFilters} />
+    </div>
+  </div>
+)}
     
 
       {/* Main content area */}
@@ -43,7 +38,7 @@ export default function Main({ filters, setFilters }) {
           className="md:hidden mb-4 text-lg font-bold text-[#40BFFF]"
           onClick={() => setSidebarOpen(true)}
         >
-          Ecomm ☰
+          ☰ Slidebar
         </button>
         {/* Blue container */}
         <div
@@ -52,11 +47,8 @@ export default function Main({ filters, setFilters }) {
         >
           {/* Left text content */}
           <div
-            className="flex flex-col justify-center  md:max-w-[390.46px]  bg-[#40BFFF]"
-            style={{
-              
-              marginTop: '40px',
-            }}
+            className="flex flex-col justify-center md:max-w-[390.46px] w-full md:w-auto mt-6 md:mt-0"
+            
           >
             <h1 className="font-poppins font-medium text-[30px] text-white leading-[100%]">
               Adidas Men Running
@@ -77,11 +69,8 @@ export default function Main({ filters, setFilters }) {
 
           {/* Right shoe image */}
           <div
-            className="relative flex items-end justify-center overflow-hidden md:max-w-[442.76px] h-[221.56px] md:h-[350px] bg-[#40BFFF]"
-            style={{
-             
-              
-            }}
+            className="relative flex items-end justify-center overflow-hidden w-full md:max-w-[442.76px] h-[250px] md:h-[350px]"
+            
           >
             <Image
               src={sampleImage}

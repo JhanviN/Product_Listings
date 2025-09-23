@@ -25,91 +25,42 @@ export default function Sidebar({ filters, setFilters }) {
   ];
 
   return (
-    <aside
-      className="hidden lg:block rounded-md p-4"
-      style={{ width: "355px",  backgroundColor: "#FFFFFF" }}
-    >
-      <div className="space-y-6 flex flex-col items-start">
+    <aside className="w-full lg:w-[355px] rounded-md p-4 bg-white">
+      <div className="flex flex-col items-start space-y-6">
 
         {/* Hot Deals Box */}
-        <div
-          className="rounded-md p-4"
-          style={{ width: "100%", backgroundColor: "#F6F7F8" }}
-        >
-          <h2
-            className="px-2 py-1 text-lg text-[#22262A]"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "20px",
-              fontWeight: 500,
-              lineHeight: "100%",
-            }}
-          >
+        <div className="w-full bg-gray-100 rounded-md p-4">
+          <h2 className="px-2 py-1 text-[20px] font-medium text-[#22262A] font-poppins leading-none">
             Hot Deals
           </h2>
 
-          {/* Deals List */}
           <div className="mt-16 w-full">
             {deals.map((deal, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center mb-4 cursor-pointer px-2 py-1 rounded"
+                className={`flex justify-between items-center mb-4 px-2 py-1 rounded cursor-pointer ${
+                  selectedDeal === index ? "text-blue-500" : "text-gray-700"
+                }`}
                 onClick={() => setSelectedDeal(index)}
-                style={{
-                  backgroundColor: "#F6F7F8",
-                }}
               >
-                <span
-                  style={{
-                    fontWeight: 400,
-                    color: selectedDeal === index ? "#3B82F6" : "#374151",
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  {deal.name}
-                </span>
-                <span
-                  style={{
-                    fontWeight: 400,
-                    color: "#22262A",
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  {deal.count}
-                </span>
+                <span className="font-normal font-poppins">{deal.name}</span>
+                <span className="font-normal font-poppins text-gray-900">{deal.count}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Prices Box */}
-        <div
-          className="rounded-md p-4 mt-12"
-          style={{ width: "100%", backgroundColor: "#F6F7F8" }}
-        >
-          <h2
-            className="px-2 py-1 text-lg text-[#22262A]"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "20px",
-              fontWeight: 500,
-              lineHeight: "100%",
-            }}
-          >
+        <div className="w-full bg-gray-100 rounded-md p-4 mt-12">
+          <h2 className="px-2 py-1 text-[20px] font-medium text-[#22262A] font-poppins leading-none">
             PRICES
           </h2>
 
-          {/* Price Range Display */}
-          <div className="flex justify-between items-center mt-4 px-2">
-            <span style={{ fontWeight: 400, fontFamily: "Poppins, sans-serif" }}>
-              ${priceRange[0].toFixed(2)}
-            </span>
-            <span style={{ fontWeight: 400, fontFamily: "Poppins, sans-serif" }}>
-              ${priceRange[1].toFixed(2)}
-            </span>
+          <div className="flex justify-between items-center mt-4 px-2 font-poppins font-normal">
+            <span>${priceRange[0].toFixed(2)}</span>
+            <span>${priceRange[1].toFixed(2)}</span>
           </div>
 
-          {/* Dual-handle Range Slider */}
           <div className="mt-4 px-2">
             <Range
               step={0.01}
@@ -133,81 +84,40 @@ export default function Sidebar({ filters, setFilters }) {
                 </div>
               )}
               renderThumb={({ props }) => (
-                <div
-                  {...props}
-                  className="h-4 w-4 bg-blue-500 rounded-full"
-                />
+                <div {...props} className="h-4 w-4 bg-blue-500 rounded-full" />
               )}
             />
           </div>
         </div>
 
         {/* Color Picker Box */}
-        <div
-          className="rounded-md p-2 mt-40"
-          style={{
-            width: "100%",
-            height: "144.22px",
-            backgroundColor: "#F6F7F8",
-          }}
-        >
-          <h2
-            className="px-2 py-1 text-lg text-[#22262A]"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "20px",
-              fontWeight: 500,
-              lineHeight: "100%",
-            }}
-          >
+        <div className="w-full h-[144px] bg-gray-100 rounded-md p-2 mt-40">
+          <h2 className="px-2 py-1 text-[20px] font-medium text-[#22262A] font-poppins leading-none">
             COLOR
           </h2>
 
-          <div
-            className="mt-6 flex justify-between items-center rounded-md"
-            style={{
-              width: "292.53px",
-              height: "30.49px",
-              backgroundColor: "#F6F7F8",
-              padding: "2px 4px",
-            }}
-          >
+          <div className="mt-6 flex justify-between items-center rounded-md bg-gray-100 p-[2px] w-[293px] h-[30px]">
             {["#006CFF", "#FC3E39", "#171717", "#FFF600", "#FF00B4", "#EFDFDF"].map(
               (color, index) => (
                 <div
                   key={index}
                   className="rounded-full cursor-pointer border"
                   style={{
-                    width: "25.77px",
-                    height: "23.45px",
+                    width: "26px",
+                    height: "23px",
                     backgroundColor: color,
-                    borderColor: "#D1D5DB",
-                    borderWidth: color === "#FFFFFF" ? "1px" : "0",
+                    borderColor: color === "#FFFFFF" ? "#D1D5DB" : "transparent",
+                    borderWidth: color === "#FFFFFF" ? 1 : 0,
                   }}
-                ></div>
+                />
               )
             )}
           </div>
         </div>
 
         {/* Brand Box */}
-        <div
-          className="rounded-md p-4 mt-6"
-          style={{
-            width: "100%",
-            height: "303.15px",
-            backgroundColor: "#F6F7F8",
-          }}
-        >
-          <h2
-            className="px-2 py-1 text-lg text-[#22262A]"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "20px",
-              fontWeight: 500,
-              lineHeight: "100%",
-            }}
-          >
+        <div className="w-full h-[303px] bg-gray-100 rounded-md p-4 mt-6">
+          <h2 className="px-2 py-1 text-[20px] font-medium text-[#22262A] font-poppins leading-none">
             BRAND
           </h2>
 
@@ -215,53 +125,21 @@ export default function Sidebar({ filters, setFilters }) {
             {brands.map((brand, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center mb-4 cursor-pointer px-2 py-1 rounded"
+                className={`flex justify-between items-center mb-4 px-2 py-1 rounded cursor-pointer ${
+                  selectedBrand === index ? "text-blue-500" : "text-gray-700"
+                }`}
                 onClick={() => setSelectedBrand(index)}
-                style={{
-                  backgroundColor: "#F6F7F8",
-                }}
               >
-                <span
-                  style={{
-                    fontWeight: 400,
-                    color: selectedBrand === index ? "#3B82F6" : "#374151",
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  {brand.name}
-                </span>
-                <span
-                  style={{
-                    fontWeight: 400,
-                    color: "#22262A",
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  {brand.count}
-                </span>
+                <span className="font-normal font-poppins">{brand.name}</span>
+                <span className="font-normal font-poppins text-gray-900">{brand.count}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* More Box */}
-        <div
-          className="rounded-md mt-6 flex items-center justify-center"
-          style={{
-            width: "100%",
-            height: "69.29px",
-            backgroundColor: "#F6F7F8",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: 500,
-              fontSize: "20px",
-              lineHeight: "100%",
-              color: "#22262A",
-            }}
-          >
+        <div className="w-full h-[69px] bg-gray-100 rounded-md flex items-center justify-center mt-6">
+          <span className="font-poppins font-medium text-[20px] text-[#22262A] leading-none">
             MORE
           </span>
         </div>
