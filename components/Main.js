@@ -12,29 +12,49 @@ import sampleImage_4 from '../public/images/image_4.png';
 import sampleImage_5 from '../public/images/image_5.png';
 import sampleImage_6 from '../public/images/image_6.png';
 export default function Main({ filters, setFilters }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activePage, setActivePage] = useState(1);
   const totalPages = 5;
   return (
-    <div className="flex flex-row mt-4 gap-6">
+    <div className="flex flex-row mt-4 gap-6 relative">
       {/* Sidebar */}
-      <Sidebar filters={filters} setFilters={setFilters} />
+      <div className="hidden md:block">
+        <Sidebar filters={filters} setFilters={setFilters} />
+      </div>
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div className="fixed inset-0 z-50 flex">
+          {/* Dark overlay */}
+          <div
+            className="fixed inset-0 bg-black/50"
+            onClick={() => setSidebarOpen(false)}
+          />
+          {/* Slide-in sidebar */}
+          <div className="relative w-64 bg-white h-full z-50 shadow-lg animate-slide-in">
+            <Sidebar filters={filters} setFilters={setFilters} />
+          </div>
+        </div>
+      )}
+    
 
       {/* Main content area */}
-      <div className="flex-1 flex flex-col justify-start items-start">
+      <div className="flex-1 flex flex-col justify-start items-start px-4 md:px-0">
+        <button
+          className="md:hidden mb-4 text-lg font-bold text-[#40BFFF]"
+          onClick={() => setSidebarOpen(true)}
+        >
+          Ecomm ☰
+        </button>
         {/* Blue container */}
         <div
-          className="relative rounded-md flex justify-between items-center px-8"
-          style={{
-            width: '1069px',
-            height: '350px',
-            backgroundColor: '#40BFFF',
-          }}
+          className="relative rounded-md flex flex-col md:flex-row justify-between items-center px-6 md:px-8 w-full md:max-w-[1069px] h-[250px] md:h-[350px] bg-[#40BFFF]"
+          
         >
           {/* Left text content */}
           <div
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-center  md:max-w-[390.46px]  bg-[#40BFFF]"
             style={{
-              width: '390.46px',
+              
               marginTop: '40px',
             }}
           >
@@ -57,12 +77,10 @@ export default function Main({ filters, setFilters }) {
 
           {/* Right shoe image */}
           <div
-            className="relative flex items-end justify-center overflow-hidden"
+            className="relative flex items-end justify-center overflow-hidden md:max-w-[442.76px] h-[221.56px] md:h-[350px] bg-[#40BFFF]"
             style={{
-              bottom: '-60px',
-              width: '442.76px',
-              height: '221.56px',
-              backgroundColor: '#40BFFF',
+             
+              
             }}
           >
             <Image
@@ -76,22 +94,18 @@ export default function Main({ filters, setFilters }) {
           </div>
         </div>
 
- {/* Gray bar beneath blue container */}
+{/* Gray bar beneath blue container */}
 <div
-  className="mt-4 rounded-md flex items-center px-6"
-  style={{
-    width: '1069px',
-    height: '62.57px',
-    backgroundColor: '#F6F7F8',
-  }}
+  className="mt-4 rounded-md flex flex-col md:flex-row items-center px-4 md:px-6 
+             w-full max-w-[1069px] h-auto md:h-[62.57px] bg-[#F6F7F8] gap-4 md:gap-0"
 >
   {/* Left: Items count */}
-  <div className="flex-1 flex justify-start">
+  <div className="flex-1 flex justify-start w-full md:w-auto">
     <span className="text-sm font-medium text-gray-700">13 Items</span>
   </div>
 
-  {/* Sort By: between left and center */}
-  <div className="flex-1 flex justify-center items-center gap-2">
+  {/* Sort By */}
+  <div className="flex-1 flex justify-center items-center gap-2 w-full md:w-auto">
     <span className="text-sm text-gray-600">Sort By</span>
     <select className="border rounded px-2 py-1 text-sm focus:outline-none">
       <option>Name</option>
@@ -100,8 +114,8 @@ export default function Main({ filters, setFilters }) {
     </select>
   </div>
 
-  {/* Show: exactly in the middle */}
-  <div className="flex-1 flex justify-center items-center gap-2">
+  {/* Show */}
+  <div className="flex-1 flex justify-center items-center gap-2 w-full md:w-auto">
     <span className="text-sm text-gray-600">Show</span>
     <select className="border rounded px-2 py-1 text-sm focus:outline-none">
       <option>12</option>
@@ -111,7 +125,7 @@ export default function Main({ filters, setFilters }) {
   </div>
 
   {/* Right: Grid/List toggle */}
-  <div className="flex-1 flex justify-end items-center gap-3">
+  <div className="flex-1 flex justify-end items-center gap-3 w-full md:w-auto">
     <button className="p-1 rounded hover:bg-gray-200">
       <BsGrid3X3Gap className="w-5 h-5 text-[#40BFFF]" />
     </button>
@@ -122,7 +136,8 @@ export default function Main({ filters, setFilters }) {
 </div>
 
 {/* Product Grid: 2 rows x 3 columns */}
-<div className="mt-6 grid grid-cols-3 gap-6">
+<div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+
   {[
     { id: 1, name: 'Nike Air Max 270 React', price: "534,33", discount: "299,33", off:"24% Off", image: sampleImage_1 },
     { id: 2, name: 'Nike Air Max 270 React', price: "534,33", discount: "299,33", off:"24% Off", image: sampleImage_2 },
@@ -133,7 +148,7 @@ export default function Main({ filters, setFilters }) {
   ].map((product) => (
     <div
       key={product.id}
-      className="border border-gray-300 rounded-md w-[328px] h-[408px] flex flex-col items-center p-2"
+      className="border border-gray-300 rounded-md w-full max-w-[328px] h-[408px] flex flex-col items-center p-2"
     >
       {/* Image with HOT tag */}
       <div className="relative w-full h-[286px] flex items-center justify-center overflow-hidden rounded-md">
@@ -178,9 +193,9 @@ export default function Main({ filters, setFilters }) {
 
 
 <div
-          className="flex justify-center items-center mt-6 rounded-md"
+          className="flex justify-center items-center mt-6 rounded-md w-full max-w-[1070px]"
           style={{
-            width: '1070px',
+           
             height: '68.56px',
             backgroundColor: '#F6F7F8',
           }}

@@ -1,14 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -18,23 +9,37 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#eff6ff', // Light blue background from Figma
-          500: '#00BFFF', // Main blue (e.g., banners)
+          50: '#eff6ff',
+          500: '#00BFFF',
           600: '#0099CC',
         },
         accent: {
-          500: '#FF69B4', // Pink for badges?
+          500: '#FF69B4',
         },
-        hot: '#FFD700', // HOT badge yellow
+        hot: '#FFD700',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'], // Likely Figma font
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
-        'figma-card': '8px', // Match Figma card corners (inspect for exact)
+        'figma-card': '8px',
       },
       spacing: {
-        'figma-gap': '16px', // Common grid gap from Figma
+        'figma-gap': '16px',
+      },
+      keyframes: {
+        'slide-in': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        'slide-out': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        'slide-in': 'slide-in 0.3s ease-out forwards',
+        'slide-out': 'slide-out 0.3s ease-in forwards',
       },
     },
   },
