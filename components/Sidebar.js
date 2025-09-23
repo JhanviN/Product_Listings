@@ -90,30 +90,28 @@ export default function Sidebar({ filters, setFilters }) {
           </div>
         </div>
 
-        {/* Color Picker Box */}
-        <div className="w-full h-[144px] bg-gray-100 rounded-md p-2 mt-40">
-          <h2 className="px-2 py-1 text-[20px] font-medium text-[#22262A] font-poppins leading-none">
-            COLOR
-          </h2>
+{/* Color Picker Box */}
+<div className="w-full h-[144px] bg-gray-100 rounded-md p-2 mt-40">
+  <h2 className="px-2 py-1 text-[20px] font-medium text-[#22262A] font-poppins leading-none">
+    COLOR
+  </h2>
 
-          <div className="mt-6 flex justify-between items-center rounded-md bg-gray-100 p-[2px] w-[293px] h-[30px]">
-            {["#006CFF", "#FC3E39", "#171717", "#FFF600", "#FF00B4", "#EFDFDF"].map(
-              (color, index) => (
-                <div
-                  key={index}
-                  className="rounded-full cursor-pointer border"
-                  style={{
-                    width: "26px",
-                    height: "23px",
-                    backgroundColor: color,
-                    borderColor: color === "#FFFFFF" ? "#D1D5DB" : "transparent",
-                    borderWidth: color === "#FFFFFF" ? 1 : 0,
-                  }}
-                />
-              )
-            )}
-          </div>
-        </div>
+  <div className="mt-6 flex flex-wrap justify-between items-center rounded-md bg-gray-100 p-1 w-full gap-2">
+    {["#006CFF", "#FC3E39", "#171717", "#FFF600", "#FF00B4", "#EFDFDF"].map(
+      (color, index) => (
+        <div
+          key={index}
+          className="w-6 h-6 rounded-full cursor-pointer border"
+          style={{
+            backgroundColor: color,
+            borderColor: color === "#FFFFFF" ? "#D1D5DB" : "transparent",
+            borderWidth: color === "#FFFFFF" ? 1 : 0,
+          }}
+        />
+      )
+    )}
+  </div>
+</div>
 
         {/* Brand Box */}
         <div className="w-full h-[303px] bg-gray-100 rounded-md p-4 mt-6">
