@@ -42,7 +42,7 @@ export default function Main({ filters, setFilters }) {
         </button>
         {/* Blue container */}
         <div
-          className="relative rounded-md flex flex-col md:flex-row justify-between items-center px-6 md:px-8 w-full md:max-w-[1069px] h-[250px] md:h-[350px] bg-[#40BFFF]"
+          className="relative rounded-md flex flex-col md:flex-row justify-between items-center px-6 md:px-8 w-full md:max-w-[1069px] h-auto md:h-[350px] bg-[#40BFFF]"
           
         >
           {/* Left text content */}
