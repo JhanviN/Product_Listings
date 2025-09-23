@@ -11,46 +11,18 @@ export default function Header({ links = [], cartItems = 0, cartPrice = 0 }) {
         <Navigation links={links} />
         <div className="flex items-center space-x-2">
           <Cart />
-          <div className="flex w-40 justify-between ml-2">
+          <div className="flex w-40 justify-between ml-2 font-sans font-normal text-[20px] text-[#262626] leading-none">
             {/* Items */}
-            <span
-              style={{
-                fontFamily: "Proxima Nova, sans-serif",
-                fontWeight: 400,
-                fontSize: "20px",
-                lineHeight: "100%",
-                color: "#262626",
-              }}
-            >
-              Items
-            </span>
+            <span>Items</span>
 
             {/* Price */}
-            <span
-              style={{
-                fontFamily: "Proxima Nova, sans-serif",
-                fontWeight: 400,
-                fontSize: "20px",
-                lineHeight: "100%",
-                color: "#262626",
-              }}
-            >
-              ${cartPrice}
-            </span>
+            <span>${cartPrice}</span>
           </div>
         </div>
       </header>
 
       {/* Divider below header */}
-      <div
-        style={{
-          width: "1499.39px",
-          height: "4.53px",
-          backgroundColor: "#E5E7EB", 
-          marginTop: "2.75px", 
-          opacity: 1,
-        }}
-      />
+      <div className="w-full h-[4.5px] bg-gray-200 mt-1" />
     </>
   );
 }

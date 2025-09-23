@@ -181,34 +181,23 @@ export default function Main({ filters, setFilters }) {
 </div>
 
 
-<div
-          className="flex justify-center items-center mt-6 rounded-md w-full max-w-[1070px]"
-          style={{
-           
-            height: '68.56px',
-            backgroundColor: '#F6F7F8',
-          }}
-        >
-          {Array.from({ length: totalPages }, (_, i) => (
-            <div
-              key={i + 1}
-              onClick={() => setActivePage(i + 1)}
-              className="flex items-center justify-center cursor-pointer rounded"
-              style={{
-                width: '69.41px',
-                height: '68.56px',
-                margin: '0 4px',
-                backgroundColor: activePage === i + 1 ? '#40BFFF' : '#F6F7F8',
-                color: activePage === i + 1 ? '#FFFFFF' : '#22262A',
-                fontWeight: 500,
-                fontSize: '18px',
-                userSelect: 'none',
-              }}
-            >
-              {i + 1}
-            </div>
-          ))}
-        </div>
+<div className="flex justify-center items-center mt-6 rounded-md w-full max-w-[1070px] h-[69px] bg-gray-100">
+  {Array.from({ length: totalPages }, (_, i) => (
+    <div
+      key={i + 1}
+      onClick={() => setActivePage(i + 1)}
+      className={`
+        flex items-center justify-center cursor-pointer rounded
+        w-[69px] h-[69px] mx-1
+        text-[18px] font-medium select-none
+        ${activePage === i + 1 ? 'bg-[#40BFFF] text-white' : 'bg-gray-100 text-[#22262A]'}
+      `}
+    >
+      {i + 1}
+    </div>
+  ))}
+</div>
+
 
       </div>
     </div>
