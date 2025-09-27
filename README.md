@@ -1,9 +1,5 @@
 # Frontend Intern Test – Product Listing Page
 
-This is the solution for the **SoftDef Frontend Intern Test**.  
-The goal was to create a **pixel-perfect Product Listing Page** based on the Figma design:  
-[Figma Design Link](https://www.figma.com/design/kNs2WbNk5h7qfsQMFOwbXt/Frontend_Role?node-id=0-1&p=t)  
-
 The app is built with **Next.js** and **Tailwind CSS**, using reusable components, client-side mock data, and fully working filters, sorting, pagination, and responsive layouts.
 
 ---
